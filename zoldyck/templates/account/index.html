@@ -1,0 +1,9 @@
+{% if request.user.is_authenticated %}
+	hello {{request.user.first_name }}!!
+	<button ><a href="/logout">logout</a></button>
+{% endif %} 
+
+{% if not request.user.is_authenticated %}
+	<button ><a href="/signup">sign in </a></button>
+	<button ><a href="/signin">login</a></button>
+{% endif %} 
