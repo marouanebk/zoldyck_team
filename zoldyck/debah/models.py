@@ -10,4 +10,4 @@ class deba7(models.Model):
     limit_reacher = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.nom+" "+self.prenom
+        return self.nom+" "+self.prenom+"                             org : "+self.org.first_name

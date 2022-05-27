@@ -53,6 +53,7 @@ def login_view(request):
     if request.POST:
         form = AccountAuthenticationForm(request.POST)
         if form.is_valid():
+            print("form is valid")
 
             email = request.POST['email']
             password = request.POST['password']
@@ -61,9 +62,12 @@ def login_view(request):
             if user:
                 login(request, user)
                 return redirect("account:home")
+        else:
+            print("form isnt valid")
+
     else:
         form = AccountAuthenticationForm()
-
+        print("form isnt request psot")
     context['login_form'] = form
 
     # print(form)

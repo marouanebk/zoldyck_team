@@ -68,11 +68,11 @@
             
             {% if not request.user.is_authenticated %}
             <button style="border-radius:20px; border-color:#FFD365 ">
-                 sign in
+                 <a style="text-decoration: none ;color: white; "href="/signin">sign in</a> 
             </button>
             <div style="padding-left:30px ; padding-right:20px">
             <button style="border-radius:20px; color:#FFD365; border-color:#FFD365" id="btn">
-                sign up
+                  <a style="text-decoration: none ;color: white; "href="/signup">sign up</a>
            </button>
             </div>
             {% else %}
