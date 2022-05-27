@@ -7,4 +7,4 @@ from .models import request_s,date_request
 class request_sform(forms.ModelForm):
     class Meta:
         model = request_s
-        fields = ('owner','wilaya','baladiya')
+        fields = ('owner','wilaya','Address')
