@@ -1,3 +1,10 @@
+@media all and (max-width:1000px){
+
+#moh{
+    margin-bottom: 500px;
+    margin-right: 400px;
+    
+}
 #btn1{
     border: 2px solid ;
     
@@ -8,9 +15,4 @@
     padding-bottom: 5px;
  }
 
- #img{ 
-    
-     width: 2000px;
-     height:1080px;
-
- }
+}

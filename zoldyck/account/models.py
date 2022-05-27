@@ -46,6 +46,7 @@ class Account(AbstractBaseUser):
 	is_org					= models.BooleanField(default=False)
 	# is_approved				= models.BooleanField(default=False)
 	phone_number			= models.IntegerField(null=True , blank=True)
+	location				= models.CharField(max_length=100, blank=True,null=True)
 	is_admin				= models.BooleanField(default=False)
 	is_active				= models.BooleanField(default=True)
 	is_staff				= models.BooleanField(default=False)

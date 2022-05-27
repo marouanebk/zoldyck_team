@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signin</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/signin1.css' %}">
     
 
 </head>
@@ -16,11 +16,15 @@
         <form method="POST">
             {% csrf_token %}
         <input type="email" name="email" placeholder="adresse email">
+<br>
         <input type="password" name="password" placeholder="mot de passe">
-        <input type="submit" value="démarrer maintenant" id="btn">
-        <a href="">vous n'avez pas de compte</a>
-        <a href="">réinitialisez le mot de passe</a>
+       <br>
+       <input type="submit" value="démarrer maintenant" id="btn">
+       
         </form>
+        <a href="">vous n'avez pas de compte</a>
+       
+        <a href="">réinitialisez le mot de passe</a>
     </div>
     <img src="{% static 'img/signup_bg.svg' %}" alt="">
 </body>

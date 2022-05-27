@@ -72,3 +72,6 @@ def login_view(request):
 
     # print(form)
     return render(request, "account/signin.html", context)
+
+def org_sign(request):
+    return render(request, "orgsign.html")
