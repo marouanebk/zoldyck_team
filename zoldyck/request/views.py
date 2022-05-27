@@ -19,3 +19,6 @@ def all_request(request):
 	obj = request_s.objects.all()
 	context = {'obj':obj}
 	return render (request, "request/all_request.html" , context)
+
+def confirm_request(request):
+	return render (request, 'request/confirm_request.html')
