@@ -13,20 +13,25 @@ from .models import date_request, request_s,choix_b,choix
 from .forms import request_sform
 # Create your views here.
 def request_v(request):
-	form = request_sform
+	Owner = request.user
 	if request.POST:
-		form = request_sform(request.POST)
-		if form.is_valid():
-			form.save()
+		wilaya = request.POST.get("wilaya")
+		Address = request.POST.get("Adress")
+		print(Owner,wilaya,Address)
+		if wilaya and Address:
+			print("here")
+			req = request_s.objects.create(owner=Owner ,wilaya=wilaya ,Address=Address )
+			req.save
 			return redirect("account:home")
-	context = {'form':form}
-	return render (request, 'request/request_s.html' , context)
+	return render (request, 'request/request_s.html',{"choix":choix})
 
 
 def all_request(request):
 	obj = request_s.objects.all()
 	context = {'obj':obj}
 	return render (request, "request/all_request.html" , context)
+
+
 def confirm_request(request):	
 	list = deba7.objects.filter(org=request.user)
 	if request.method == 'POST':
