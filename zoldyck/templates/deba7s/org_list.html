@@ -28,12 +28,17 @@
         <p style="color:#019267; font-size:20px">Nom : {{element.nom}} {{element.prenom}}</p>
         <p style="color:#019267; font-size:20px">Location: {{element.location}}</p>
         <p style="color:#019267; font-size:20px">Offrande: {{element.taken}}/{{element.limit}}</p>
+        <form method="POST" action="">
+            {%csrf_token%}
+        <input type="text" name="butcher" id="butcher" value={{element.id}} style="display: none;">
+    
         </div>
         <div style="padding-left:510px;margin-top:-175.5px;">
-        <button style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:90px;border:0px solid; width:290px;height:200px; "><a style="text-decoration: none; color:white;"href="#">Déployer</a></button>
+        <input type="submit" style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:90px;border:0px solid; width:290px;height:200px; " value="su">
         </div>            
     </div>  
 </div>
+
 {% endfor %}
 
 
