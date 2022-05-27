@@ -2,11 +2,14 @@
     margin: 0;
     padding: 0%;
 }
+body{
+    overflow: hidden;
+}
 form{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
+    height:10vh;
     width: 100%;
 }
 .first-part{
@@ -15,7 +18,7 @@ form{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 450px;
+    height: 0px;
     margin-right: -340px;
 }
 .error{
@@ -25,6 +28,7 @@ form{
 }
 input{
     width:190px;
+    padding: 10px 20px;
 }
 h1{
     padding: 30px;
@@ -58,5 +62,10 @@ iframe{
         height: 50vh;
         margin:20px 0 ;
     }
-
+    .first-part {
+        margin-right: 0;
+    } 
+}
+@media screen and (max-width:600px){
+    
 }
