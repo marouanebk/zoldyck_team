@@ -1,5 +1,8 @@
 import re
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
+from django.utils import timezone
+from account.models import Account
+from request.models import request_s
 from .models import deba7
 from .forms import AddDeba7Form
 from request.models import date_request
@@ -20,10 +23,23 @@ def add_deba7(request):
 
 
 
-def association_org(request):
-    list_d = deba7.objects.filter(org=request.user)
-    return render(request, "deba7s/org_list.html" , {'list_d':list_d})
-
+def association_org(request,req_id):
+   
+    if request.POST:
+        list_d = deba7.objects.filter(org=request.user)
+        print('ddd')
+        butcher = request.POST.get("butcher")
+        print(butcher)
+        req = get_object_or_404(request_s,pk=req_id)
+        if butcher:
+            req.taken = True
+            req.save()
+            acc = date_request.objects.create(organisation=request.user,debah=get_object_or_404(deba7,pk=int(butcher)),simple_user=get_object_or_404(Account,pk=req_id),date=timezone.now())
+            acc.save()
+            print('yh')
+        return render(request, "deba7s/org_list.html" , {'list_d':list_d})  
+    list_d = deba7.objects.filter(org=request.user)  
+    return render(request, "deba7s/org_list.html" , {'list_d':list_d})  
 
 
 def association(request,d_id):
