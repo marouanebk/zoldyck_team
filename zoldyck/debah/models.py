@@ -8,3 +8,6 @@ class deba7(models.Model):
     limit = models.IntegerField()
     taken = models.IntegerField(default=0)
     limit_reacher = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nom+" "+self.prenom
