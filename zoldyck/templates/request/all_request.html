@@ -22,11 +22,10 @@
         <p style="color:#019267; font-size:20px">Numero de telephone:{{req.owner.phone_number}}</p>
         </div>
         <div style="padding-left:510px;margin-top:-175.5px;">
-        <button style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:90px;border:0px solid; width:290px;height:200px; "><a style="text-decoration: none; color:white;"href="#">allocation <br> un abatteur</a></button>
+        <button style="color:#F6F8FF; font-size:40px;background-color:#019267;border-radius:90px;border:0px solid; width:290px;height:200px; "><a style="text-decoration: none; color:white;"href="{% url 'debah:association_org' req.id %}">allocation <br> un abatteur</a></button>
         </div>            
     </div>  
 </div>
-
 {% endfor %}
 
 
