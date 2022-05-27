@@ -1,7 +1,6 @@
 from django.db import models
 from account.models import Account
 from debah.models import deba7
-
 class request_s(models.Model):
 	owner 		= models.OneToOneField(Account , on_delete=models.CASCADE)
 	wilaya		= models.CharField(max_length=100)

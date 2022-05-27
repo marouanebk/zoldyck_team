@@ -1,4 +1,13 @@
-<p>{{form.organisation}}</p>
-<p>{{form.date}}</p>
-<p>{{form.simple_user}}</p>
-<p>{{form.debah}}</p>
+
+<form method="POST">
+	{%csrf_token %}
+    <input type="text" name="d" placeholder="test">
+    <input type="text" name="e" placeholder="test">
+    <input type="text" name="f" placeholder="test">
+    <select name="g" id="pet-select">
+        {%for deba7 in list %}
+        <option value="{{deba7.id}}">{{deba7.nom}} {{deba7.prenom}}</option>
+        {%endfor%}
+    </select>
+<button type="submit">Confirmer </button>
+</form>

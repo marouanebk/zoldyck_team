@@ -8,7 +8,3 @@ class request_sform(forms.ModelForm):
     class Meta:
         model = request_s
         fields = ('owner','wilaya','baladiya')
-class request_date(forms.ModelForm):
-    class Meta:
-        model = date_request
-        fields = ('organisation','debah','simple_user','date')
