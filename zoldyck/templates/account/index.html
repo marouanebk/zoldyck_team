@@ -1,33 +1,49 @@
 {% extends 'navbarsign.html' %}
+{% block content%}
 
-{% block content %}
-{% if request.user.is_authenticated %}
-	hello {{request.user.first_name }}!!
-	<button ><a href="/logout">logout</a></button>
-{% endif %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="one">
+        <h1>Rahma</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus quibusdam provident beatae, rerum quo et quas saepe odit veniam porro perferendis illo fuga necessitatibus exercitationem iure dolorum. Dicta consectetur possimus, necessitatibus esse modi molestias quasi facilis optio impedit, vitae quam.</p>
+        <button>démarrer</button>
+    </div>
+    <div class="two">
+        <div>
+                    <h1>un debah plus doux ?</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quidem illum sit, similique consectetur ducimus sed deleniti eveniet ratione quaerat corrupti odio! Consectetur, modi iure est ab dolorem, sint alias dicta inventore, optio temporibus molestiae aliquid! In sequi non doloremque?</p>
+        </div>
 
-{% if not request.user.is_authenticated %}
-	<button ><a href="/signup">sign in </a></button>
-	<button ><a href="/signin">login</a></button>
-{% endif %} 
+    </div>
+    <div class="three">
+        <h1>qui sommes nous ?</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint asperiores recusandae? Rerum, praesentium! Aspernatur nam mollitia placeat quis totam nisi. Repudiandae iusto enim assumenda, recusandae illum similique illo est ab aspernatur odio quam?</p>
+    </div>
+    <div class="four">
+        <div>
+            <h1>qui sont les rahimins?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint asperiores recusandae? Rerum, praesentium! Aspernatur nam mollitia placeat quis totam nisi. Repudiandae iusto enim assumenda, recusandae illum similique illo est ab aspernatur odio quam?</p>    
+        </div>
+    </div>
+    <div class="five">
+        <div>
+            <h1>vous voulez faire un don?</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad sint asperiores recusandae? Rerum, praesentium! Aspernatur nam mollitia placeat quis totam nisi. Repudiandae iusto enim assumenda, recusandae illum similique illo est ab aspernatur odio quam?</p>
+            <button class="green">faire une donnation</button>
+        </div>
 
-<p><Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.></Lorem></p>
-
-<p><Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.></Lorem></p>
-<p><Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.></Lorem></p>
+    </div>
+    <img src="{% static 'img/mobile_bg.svg' %}" alt="" class="image_fond">
+    <img src="{% static 'img/main_bg.svg' %}" alt="" class="image_fond_pc">
+</body>
+</html>
 {% endblock %}
