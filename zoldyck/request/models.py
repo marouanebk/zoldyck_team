@@ -19,7 +19,8 @@ class request_s(models.Model):
 	owner 		= models.OneToOneField(Account , on_delete=models.CASCADE)
 	wilaya		= models.CharField(max_length=100)
 	Address	    = models.CharField(max_length=100)
-# Create your models here.
+	taken       = models.BooleanField(default=False)
+	# Create your models here.
  
 class date_request(models.Model):
 	organisation = models.ForeignKey(Account , on_delete=models.CASCADE , related_name="organisation",limit_choices_to={'is_org': True})

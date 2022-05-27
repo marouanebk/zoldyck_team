@@ -27,7 +27,7 @@ def request_v(request):
 
 
 def all_request(request):
-	obj = request_s.objects.all()
+	obj = request_s.objects.filter(taken=False)
 	context = {'obj':obj}
 	return render (request, "request/all_request.html" , context)
 
