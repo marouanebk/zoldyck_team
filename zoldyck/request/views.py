@@ -44,3 +44,4 @@ def confirm_request(request):
 			d = date_request.objects.create(organisation=request.user,debah=get_object_or_404(deba7,pk=int(s3)),simple_user=get_object_or_404(Account,pk=2),date=timezone.now())
 			print(s2)
 	return render (request, 'request/confirm_request.html',{'list':list,'choix':choix})
+
