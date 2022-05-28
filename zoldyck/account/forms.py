@@ -26,4 +26,8 @@ class AccountAuthenticationForm(forms.ModelForm):
             if not authenticate(email=email, password=password):
                 raise forms.ValidationError("Invalid login")
 
+class request_form(UserCreationForm):
+    class Meta:
+        model = Account
+        fields = ('first_name','email','phone_number' , 'password1','password2', 'location')
 

@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import redirect
 
 from django.http import HttpResponse
-from .forms import RegistrationForm , AccountAuthenticationForm
+from .forms import RegistrationForm , AccountAuthenticationForm , request_form
 from django.contrib.auth import login, authenticate, logout
 
 
@@ -30,10 +30,10 @@ def signup(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            # email = form.cleaned_data.get('email')
-            # raw_password = form.cleaned_data.get('password1')
-            # account = authenticate(email=email, password=raw_password)
-            # login(request, account)
+            email = form.cleaned_data.get('email')
+            raw_password = form.cleaned_data.get('password1')
+            account = authenticate(email=email, password=raw_password)
+            login(request, account)
             return redirect('account:home')
         else:
             context['form'] = form
@@ -74,4 +74,20 @@ def login_view(request):
     return render(request, "account/signin.html", context)
 
 def org_sign(request):
-    return render(request, "orgsign.html")
+    if request.POST:
+        form = request_form(request.POST,initial={'is_org':True,'is_active':False})
+        if form.is_valid():
+            print("valid")
+            form.is_active=False
+            form.is_org=True
+            instance = form.save(commit=False)
+            instance.is_active=False
+            instance.is_org=True
+            instance.save()
+            return redirect("account:home")
+        else:
+            print(form.errors.as_data)
+    else:
+        form = request_form
+
+    return render(request, "orgsign.html", {'form':form})
