@@ -11,7 +11,7 @@
     
 </head>
 <body>
-    
+    {% if not request.user.is_org%}
     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color:#00C897;">
         <!-- Container wrapper -->
         <div class="container-fluid">
@@ -138,6 +138,118 @@
         </div>
         <!-- Container wrapper -->
       </nav>
+
+    {% else %}
+     <nav class="navbar navbar-expand-lg navbar-light  fixed-top" style="background-color:#00C897;">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+          <!-- Toggle button -->
+          <button
+            
+            class="navbar-toggler"
+            type="button"
+            data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+          <i class="bi bi-list"></i>
+          </button>
+      
+          <!-- Collapsible wrapper -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <a class="navbar-brand mt-2 mt-lg-0" href="#">
+              <img
+                src="./img/logo.svg"
+                height="25"
+                loading="lazy"
+              />
+            </a>
+            <!-- Left links -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0" style="padding-left:120px;">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'account:home' %}" id="coloritems"  style="padding-left:40px">Accueil</a>
+              </li>
+              <li class="nav-item" >
+                <a class="nav-link" href="/all_request" id="coloritems"  style="padding-left:40px">Liste De Demandes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" id="coloritems"  style="padding-left:40px">Mon Profile</a>
+              </li>
+             
+            </ul>
+            
+            <!-- Left links -->
+          </div>
+          <!-- Collapsible wrapper -->
+      
+          <!-- Right elements -->
+          <div class="d-flex align-items-center">
+            <!--icon-->
+           
+            
+            <!-- Notifications -->
+            <div class="dropdown">
+              <a
+                class="nav-link"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <i class="bi bi-bell-fill" style="font-size: 7.5mm; color: #FFD365;"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">info</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">info2</a>
+                </li>
+                <li><hr class="dropdown-divider">
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">info3</a>
+                </li>
+              </ul>
+            </div>
+            <!-- Avatar -->
+            <div class="dropdown">
+              <a
+                class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                href="#"
+                id="navbarDropdownMenuAvatar"
+                role="button"
+                data-mdb-toggle="dropdown"
+                aria-expanded="false"
+              >
+              <i  class="bi bi-person-fill" style="font-size: 10mm; color: #FFD365;"></i>
+              </a>
+              <ul
+                class="dropdown-menu dropdown-menu-end"
+                aria-labelledby="navbarDropdownMenuAvatar"
+              >
+                <li>
+                  <a class="dropdown-item" href="#">idk</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/logout">logout</a>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+          <!-- Right elements -->
+        </div>
+        <!-- Container wrapper -->
+      </nav>
+      {% endif %}
       {% block content %}
         
       {% endblock %}
